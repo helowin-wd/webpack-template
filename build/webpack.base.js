@@ -8,12 +8,15 @@ const { VueLoaderPlugin } = require('vue-loader')
  * @type {import('webpack').Configuration}
  */
 const config = {
-  mode: 'development',
+  mode: 'production',
+  optimization:{
+    minimize: false, // 关闭代码压缩
+  },
   entry: path.resolve(__dirname, '../src/main.ts'),
   output: {
     filename: 'js/[name].[contenthash:6].js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/', // 打包后的资源的访问路径前缀
+    publicPath: process.env.NODE_ENV === 'production' ? '/' : './', // 打包后的资源的访问路径前缀
     clean: true // 清除上一次打包的文件
   },
   plugins: [
@@ -37,27 +40,15 @@ const config = {
         use: 'vue-loader'
       },
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
+          "babel-loader",
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true, // 只进行转译，不进行类型检查
-              appendTsSuffixTo: ['\\.vue$/'] // vue文件添加ts后缀
-            }
-          },
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-typescript',
-                  {
-                    allExtensions: true, // 支持所有类型的文件扩展名
-                  }
-                ]
-              ]
+              transpileOnly: true,
+              appendTsSuffixTo: ['\\.vue$/']
             }
           }
         ]
