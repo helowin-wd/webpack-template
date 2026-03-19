@@ -8,7 +8,6 @@ const { VueLoaderPlugin } = require('vue-loader')
  * @type {import('webpack').Configuration}
  */
 const config = {
-  mode: 'production',
   optimization:{
     minimize: false, // 关闭代码压缩
   },
@@ -16,7 +15,7 @@ const config = {
   output: {
     filename: 'js/[name].[contenthash:6].js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: process.env.NODE_ENV === 'production' ? '/' : './', // 打包后的资源的访问路径前缀
+    publicPath: "/", // 打包后的资源的访问路径前缀
     clean: true // 清除上一次打包的文件
   },
   plugins: [
