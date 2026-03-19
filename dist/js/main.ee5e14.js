@@ -25648,7 +25648,6 @@ function normalizeCssVarValue(value) {
 ;// ./node_modules/.pnpm/@vue+reactivity@3.5.30/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 /* unused harmony import specifier */ var reactivity_esm_bundler_extend;
 /* unused harmony import specifier */ var reactivity_esm_bundler_toRawType;
-/* unused harmony import specifier */ var reactivity_esm_bundler_hasChanged;
 /* unused harmony import specifier */ var reactivity_esm_bundler_isFunction;
 /* unused harmony import specifier */ var reactivity_esm_bundler_isArray;
 /* unused harmony import specifier */ var reactivity_esm_bundler_isIntegerKey;
@@ -27094,7 +27093,7 @@ class RefImpl {
     const oldValue = this._rawValue;
     const useDirectValue = this["__v_isShallow"] || isShallow(newValue) || isReadonly(newValue);
     newValue = useDirectValue ? newValue : toRaw(newValue);
-    if (reactivity_esm_bundler_hasChanged(newValue, oldValue)) {
+    if (hasChanged(newValue, oldValue)) {
       this._rawValue = newValue;
       this._value = useDirectValue ? newValue : toReactive(newValue);
       if (false) // removed by dead control flow
@@ -27565,7 +27564,6 @@ function traverse(value, depth = Infinity, seen) {
 /* unused harmony import specifier */ var runtime_core_esm_bundler_extend;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isBuiltInDirective;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_EMPTY_OBJ;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_def;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isOn;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isReservedProp;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_normalizeClass;
@@ -28133,7 +28131,7 @@ function tryWrap(fn) {
 }
 
 let devtools$1;
-let buffer = [];
+let buffer = (/* unused pure expression or super */ null && ([]));
 let devtoolsNotInstalled = false;
 function emit$1(event, ...args) {
   if (devtools$1) {
@@ -28185,11 +28183,11 @@ function devtoolsInitApp(app, version) {
 function devtoolsUnmountApp(app) {
   emit$1("app:unmount" /* APP_UNMOUNT */, app);
 }
-const devtoolsComponentAdded = /* @__PURE__ */ createDevtoolsComponentHook("component:added" /* COMPONENT_ADDED */);
-const devtoolsComponentUpdated = /* @__PURE__ */ createDevtoolsComponentHook("component:updated" /* COMPONENT_UPDATED */);
-const _devtoolsComponentRemoved = /* @__PURE__ */ createDevtoolsComponentHook(
+const devtoolsComponentAdded = /* @__PURE__ */ (/* unused pure expression or super */ null && (createDevtoolsComponentHook("component:added" /* COMPONENT_ADDED */)));
+const devtoolsComponentUpdated = /* @__PURE__ */ (/* unused pure expression or super */ null && (createDevtoolsComponentHook("component:updated" /* COMPONENT_UPDATED */)));
+const _devtoolsComponentRemoved = /* @__PURE__ */ (/* unused pure expression or super */ null && (createDevtoolsComponentHook(
   "component:removed" /* COMPONENT_REMOVED */
-);
+)));
 const devtoolsComponentRemoved = (component) => {
   if (devtools$1 && typeof devtools$1.cleanupBuffer === "function" && // remove the component if it wasn't buffered
   !devtools$1.cleanupBuffer(component)) {
@@ -28259,9 +28257,8 @@ function withCtx(fn, ctx = currentRenderingInstance, isNonScopedSlot) {
         setBlockTracking(1);
       }
     }
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      devtoolsComponentUpdated(ctx);
-    }
+    if (false) // removed by dead control flow
+{}
     return res;
   };
   renderFnWithContext._n = true;
@@ -29188,10 +29185,10 @@ function getTransitionRawChildren(children, keepComment = false, parentKey) {
 
 // @__NO_SIDE_EFFECTS__
 function defineComponent(options, extraOptions) {
-  return runtime_core_esm_bundler_isFunction(options) ? (
+  return isFunction(options) ? (
     // #8236: extend call and options.name access are considered side-effects
     // by Rollup, so we have to wrap it in a pure-annotated IIFE.
-    /* @__PURE__ */ (() => runtime_core_esm_bundler_extend({ name: options.name }, extraOptions, { setup: options }))()
+    /* @__PURE__ */ (() => extend({ name: options.name }, extraOptions, { setup: options }))()
   ) : options;
 }
 
@@ -29392,9 +29389,7 @@ function createHydrationFunctions(rendererInternals) {
   } = rendererInternals;
   const hydrate = (vnode, container) => {
     if (!container.hasChildNodes()) {
-      ( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && warn$1(
-        `Attempting to hydrate existing markup but container is empty. Performing full mount instead.`
-      );
+      ( false) && 0;
       patch(null, vnode, container);
       flushPostFlushCbs();
       container._vnode = vnode;
@@ -29418,10 +29413,8 @@ function createHydrationFunctions(rendererInternals) {
     const { type, ref, shapeFlag, patchFlag } = vnode;
     let domType = node.nodeType;
     vnode.el = node;
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      runtime_core_esm_bundler_def(node, "__vnode", vnode, true);
-      runtime_core_esm_bundler_def(node, "__vueParentComponent", parentComponent, true);
-    }
+    if (false) // removed by dead control flow
+{}
     if (patchFlag === -2) {
       optimized = false;
       vnode.dynamicChildren = null;
@@ -29438,15 +29431,7 @@ function createHydrationFunctions(rendererInternals) {
           }
         } else {
           if (node.data !== vnode.children) {
-            ( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && warn$1(
-              `Hydration text mismatch in`,
-              node.parentNode,
-              `
-  - rendered on server: ${JSON.stringify(
-                node.data
-              )}
-  - expected on client: ${JSON.stringify(vnode.children)}`
-            );
+            ( false) && 0;
             logMismatchError();
             node.data = vnode.children;
           }
@@ -29573,9 +29558,8 @@ function createHydrationFunctions(rendererInternals) {
             rendererInternals,
             hydrateNode
           );
-        } else if ( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) {
-          warn$1("Invalid HostVNode type:", type, `(${typeof type})`);
-        }
+        } else if (false) // removed by dead control flow
+{}
     }
     if (ref != null) {
       setRef(ref, null, parentSuspense, vnode);
@@ -29620,15 +29604,8 @@ function createHydrationFunctions(rendererInternals) {
         let hasWarned = false;
         while (next) {
           if (!isMismatchAllowed(el, 1 /* CHILDREN */)) {
-            if (( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && !hasWarned) {
-              warn$1(
-                `Hydration children mismatch on`,
-                el,
-                `
-Server rendered element contains more child nodes than client vdom.`
-              );
-              hasWarned = true;
-            }
+            if (false) // removed by dead control flow
+{}
             logMismatchError();
           }
           const cur = next;
@@ -29644,27 +29621,18 @@ Server rendered element contains more child nodes than client vdom.`
         if (textContent !== clientText && // innerHTML normalize \r\n or \r into a single \n in the DOM
         textContent !== clientText.replace(/\r\n|\r/g, "\n")) {
           if (!isMismatchAllowed(el, 0 /* TEXT */)) {
-            ( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && warn$1(
-              `Hydration text content mismatch on`,
-              el,
-              `
-  - rendered on server: ${textContent}
-  - expected on client: ${clientText}`
-            );
+            ( false) && 0;
             logMismatchError();
           }
           el.textContent = vnode.children;
         }
       }
       if (props) {
-        if ( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__ || forcePatch || !optimized || patchFlag & (16 | 32)) {
+        if ( false || forcePatch || !optimized || patchFlag & (16 | 32)) {
           const isCustomElement = el.tagName.includes("-");
           for (const key in props) {
-            if (( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && // #11189 skip if this node has directives that have created hooks
-            // as it could have mutated the DOM in any possible way
-            !(dirs && dirs.some((d) => d.dir.created)) && propHasMismatch(el, key, props[key], vnode, parentComponent)) {
-              logMismatchError();
-            }
+            if (false) // removed by dead control flow
+{}
             if (forcePatch && (key.endsWith("value") || key === "indeterminate") || runtime_core_esm_bundler_isOn(key) && !runtime_core_esm_bundler_isReservedProp(key) || // force hydrate v-bind with .prop modifiers
             key[0] === "." || isCustomElement && !runtime_core_esm_bundler_isReservedProp(key)) {
               patchProp(el, key, null, props[key], void 0, parentComponent);
@@ -29733,15 +29701,8 @@ Server rendered element contains more child nodes than client vdom.`
         insert(vnode.el = createText(""), container);
       } else {
         if (!isMismatchAllowed(container, 1 /* CHILDREN */)) {
-          if (( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && !hasWarned) {
-            warn$1(
-              `Hydration children mismatch on`,
-              container,
-              `
-Server rendered element contains fewer child nodes than client vdom.`
-            );
-            hasWarned = true;
-          }
+          if (false) // removed by dead control flow
+{}
           logMismatchError();
         }
         patch(
@@ -29783,15 +29744,7 @@ Server rendered element contains fewer child nodes than client vdom.`
   };
   const handleMismatch = (node, vnode, parentComponent, parentSuspense, slotScopeIds, isFragment) => {
     if (!isMismatchAllowed(node.parentElement, 1 /* CHILDREN */)) {
-      ( false || __VUE_PROD_HYDRATION_MISMATCH_DETAILS__) && warn$1(
-        `Hydration node mismatch:
-- rendered on server:`,
-        node,
-        node.nodeType === 3 ? `(text)` : isComment(node) && node.data === "[" ? `(start of fragment)` : ``,
-        `
-- expected on client:`,
-        vnode.type
-      );
+      ( false) && 0;
       logMismatchError();
     }
     vnode.el = null;
@@ -30290,9 +30243,8 @@ const KeepAliveImpl = {
     const cache = /* @__PURE__ */ new Map();
     const keys = /* @__PURE__ */ new Set();
     let current = null;
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      instance.__v_cache = cache;
-    }
+    if (false) // removed by dead control flow
+{}
     const parentSuspense = instance.suspense;
     const {
       renderer: {
@@ -30327,9 +30279,8 @@ const KeepAliveImpl = {
           invokeVNodeHook(vnodeHook, instance2.parent, vnode);
         }
       }, parentSuspense);
-      if ( false || __VUE_PROD_DEVTOOLS__) {
-        devtoolsComponentAdded(instance2);
-      }
+      if (false) // removed by dead control flow
+{}
     };
     sharedContext.deactivate = (vnode) => {
       const instance2 = vnode.component;
@@ -30346,9 +30297,8 @@ const KeepAliveImpl = {
         }
         instance2.isDeactivated = true;
       }, parentSuspense);
-      if ( false || __VUE_PROD_DEVTOOLS__) {
-        devtoolsComponentAdded(instance2);
-      }
+      if (false) // removed by dead control flow
+{}
       if (false) // removed by dead control flow
 {}
     };
@@ -30775,12 +30725,12 @@ const publicPropertiesMap = (
     $root: (i) => getPublicInstance(i.root),
     $host: (i) => i.ce,
     $emit: (i) => i.emit,
-    $options: (i) => __VUE_OPTIONS_API__ ? resolveMergedOptions(i) : i.type,
+    $options: (i) =>  true ? resolveMergedOptions(i) : 0,
     $forceUpdate: (i) => i.f || (i.f = () => {
       queueJob(i.update);
     }),
     $nextTick: (i) => i.n || (i.n = nextTick.bind(i.proxy)),
-    $watch: (i) => __VUE_OPTIONS_API__ ? instanceWatch.bind(i) : NOOP
+    $watch: (i) =>  true ? instanceWatch.bind(i) : 0
   })
 );
 const isReservedPrefix = (key) => key === "_" || key === "$";
@@ -30809,7 +30759,7 @@ const PublicInstanceProxyHandlers = {
       } else if (hasSetupBinding(setupState, key)) {
         accessCache[key] = 1 /* SETUP */;
         return setupState[key];
-      } else if (__VUE_OPTIONS_API__ && data !== EMPTY_OBJ && hasOwn(data, key)) {
+      } else if ( true && data !== EMPTY_OBJ && hasOwn(data, key)) {
         accessCache[key] = 2 /* DATA */;
         return data[key];
       } else if (hasOwn(props, key)) {
@@ -30818,7 +30768,7 @@ const PublicInstanceProxyHandlers = {
       } else if (ctx !== EMPTY_OBJ && hasOwn(ctx, key)) {
         accessCache[key] = 4 /* CONTEXT */;
         return ctx[key];
-      } else if (!__VUE_OPTIONS_API__ || shouldCacheAccess) {
+      } else if ( false || shouldCacheAccess) {
         accessCache[key] = 0 /* OTHER */;
       }
     }
@@ -30855,7 +30805,7 @@ const PublicInstanceProxyHandlers = {
       setupState[key] = value;
       return true;
     } else if (false) // removed by dead control flow
-{} else if (__VUE_OPTIONS_API__ && data !== EMPTY_OBJ && hasOwn(data, key)) {
+{} else if ( true && data !== EMPTY_OBJ && hasOwn(data, key)) {
       data[key] = value;
       return true;
     } else if (hasOwn(instance.props, key)) {
@@ -30877,7 +30827,7 @@ const PublicInstanceProxyHandlers = {
     _: { data, setupState, accessCache, ctx, appContext, props, type }
   }, key) {
     let cssModules;
-    return !!(accessCache[key] || __VUE_OPTIONS_API__ && data !== EMPTY_OBJ && key[0] !== "$" && hasOwn(data, key) || hasSetupBinding(setupState, key) || hasOwn(props, key) || hasOwn(ctx, key) || hasOwn(publicPropertiesMap, key) || hasOwn(appContext.config.globalProperties, key) || (cssModules = type.__cssModules) && cssModules[key]);
+    return !!(accessCache[key] ||  true && data !== EMPTY_OBJ && key[0] !== "$" && hasOwn(data, key) || hasSetupBinding(setupState, key) || hasOwn(props, key) || hasOwn(ctx, key) || hasOwn(publicPropertiesMap, key) || hasOwn(appContext.config.globalProperties, key) || (cssModules = type.__cssModules) && cssModules[key]);
   },
   defineProperty(target, key, descriptor) {
     if (descriptor.get != null) {
@@ -31528,12 +31478,12 @@ function createAppAPI(render, hydrate) {
         return app;
       },
       mixin(mixin) {
-        if (__VUE_OPTIONS_API__) {
+        if (true) {
           if (!context.mixins.includes(mixin)) {
             context.mixins.push(mixin);
           } else if (false) // removed by dead control flow
 {}
-        } else if (false) // removed by dead control flow
+        } else // removed by dead control flow
 {}
         return app;
       },
@@ -31580,10 +31530,8 @@ function createAppAPI(render, hydrate) {
           isMounted = true;
           app._container = rootContainer;
           rootContainer.__vue_app__ = app;
-          if ( false || __VUE_PROD_DEVTOOLS__) {
-            app._instance = vnode.component;
-            devtoolsInitApp(app, version);
-          }
+          if (false) // removed by dead control flow
+{}
           return getComponentPublicInstance(vnode.component);
         } else if (false) // removed by dead control flow
 {}
@@ -31601,10 +31549,8 @@ function createAppAPI(render, hydrate) {
             16
           );
           render(null, app._container);
-          if ( false || __VUE_PROD_DEVTOOLS__) {
-            app._instance = null;
-            devtoolsUnmountApp(app);
-          }
+          if (false) // removed by dead control flow
+{}
           delete app._container.__vue_app__;
         } else if (false) // removed by dead control flow
 {}
@@ -31709,9 +31655,8 @@ function emit(instance, event, ...rawArgs) {
       args = rawArgs.map(looseToNumber);
     }
   }
-  if ( false || __VUE_PROD_DEVTOOLS__) {
-    devtoolsComponentEmit(instance, event, args);
-  }
+  if (false) // removed by dead control flow
+{}
   if (false) // removed by dead control flow
 {}
   let handlerName;
@@ -31746,7 +31691,7 @@ function emit(instance, event, ...rawArgs) {
 }
 const mixinEmitsCache = /* @__PURE__ */ new WeakMap();
 function normalizeEmitsOptions(comp, appContext, asMixin = false) {
-  const cache = __VUE_OPTIONS_API__ && asMixin ? mixinEmitsCache : appContext.emitsCache;
+  const cache =  true && asMixin ? mixinEmitsCache : appContext.emitsCache;
   const cached = cache.get(comp);
   if (cached !== void 0) {
     return cached;
@@ -31754,7 +31699,7 @@ function normalizeEmitsOptions(comp, appContext, asMixin = false) {
   const raw = comp.emits;
   let normalized = {};
   let hasExtends = false;
-  if (__VUE_OPTIONS_API__ && !isFunction(comp)) {
+  if ( true && !isFunction(comp)) {
     const extendEmits = (raw2) => {
       const normalizedFromExtend = normalizeEmitsOptions(raw2, appContext, true);
       if (normalizedFromExtend) {
@@ -32245,7 +32190,7 @@ function resolvePropValue(options, props, key, value, instance, isAbsent) {
 }
 const mixinPropsCache = /* @__PURE__ */ new WeakMap();
 function normalizePropsOptions(comp, appContext, asMixin = false) {
-  const cache = __VUE_OPTIONS_API__ && asMixin ? mixinPropsCache : appContext.propsCache;
+  const cache =  true && asMixin ? mixinPropsCache : appContext.propsCache;
   const cached = cache.get(comp);
   if (cached) {
     return cached;
@@ -32254,7 +32199,7 @@ function normalizePropsOptions(comp, appContext, asMixin = false) {
   const normalized = {};
   const needCastKeys = [];
   let hasExtends = false;
-  if (__VUE_OPTIONS_API__ && !isFunction(comp)) {
+  if ( true && !isFunction(comp)) {
     const extendProps = (raw2) => {
       hasExtends = true;
       const [props, keys] = normalizePropsOptions(raw2, appContext, true);
@@ -32543,9 +32488,8 @@ function startMeasure(instance, type) {
   if (instance.appContext.config.performance && isSupported()) {
     perf.mark(`vue-${type}-${instance.uid}`);
   }
-  if ( false || __VUE_PROD_DEVTOOLS__) {
-    devtoolsPerfStart(instance, type, isSupported() ? perf.now() : Date.now());
-  }
+  if (false) // removed by dead control flow
+{}
 }
 function endMeasure(instance, type) {
   if (instance.appContext.config.performance && isSupported()) {
@@ -32558,9 +32502,8 @@ function endMeasure(instance, type) {
     perf.clearMarks(startTag);
     perf.clearMarks(endTag);
   }
-  if ( false || __VUE_PROD_DEVTOOLS__) {
-    devtoolsPerfEnd(instance, type, isSupported() ? perf.now() : Date.now());
-  }
+  if (false) // removed by dead control flow
+{}
 }
 function isSupported() {
   if (supported !== void 0) {
@@ -32577,18 +32520,12 @@ function isSupported() {
 
 function initFeatureFlags() {
   const needWarn = [];
-  if (typeof __VUE_OPTIONS_API__ !== "boolean") {
-     false && 0;
-    getGlobalThis().__VUE_OPTIONS_API__ = true;
-  }
-  if (typeof __VUE_PROD_DEVTOOLS__ !== "boolean") {
-     false && 0;
-    getGlobalThis().__VUE_PROD_DEVTOOLS__ = false;
-  }
-  if (typeof __VUE_PROD_HYDRATION_MISMATCH_DETAILS__ !== "boolean") {
-     false && 0;
-    getGlobalThis().__VUE_PROD_HYDRATION_MISMATCH_DETAILS__ = false;
-  }
+  if (false) // removed by dead control flow
+{}
+  if (false) // removed by dead control flow
+{}
+  if (false) // removed by dead control flow
+{}
   if (false) // removed by dead control flow
 {}
 }
@@ -32606,9 +32543,8 @@ function baseCreateRenderer(options, createHydrationFns) {
   }
   const target = getGlobalThis();
   target.__VUE__ = true;
-  if ( false || __VUE_PROD_DEVTOOLS__) {
-    setDevtoolsHook$1(target.__VUE_DEVTOOLS_GLOBAL_HOOK__, target);
-  }
+  if (false) // removed by dead control flow
+{}
   const {
     insert: hostInsert,
     remove: hostRemove,
@@ -32871,10 +32807,8 @@ function baseCreateRenderer(options, createHydrationFns) {
         invokeVNodeHook(vnodeHook, parentComponent, vnode);
       }
     }
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      def(el, "__vnode", vnode, true);
-      def(el, "__vueParentComponent", parentComponent, true);
-    }
+    if (false) // removed by dead control flow
+{}
     if (dirs) {
       invokeDirectiveHook(vnode, null, parentComponent, "beforeMount");
     }
@@ -32934,9 +32868,8 @@ function baseCreateRenderer(options, createHydrationFns) {
   };
   const patchElement = (n1, n2, parentComponent, parentSuspense, namespace, slotScopeIds, optimized) => {
     const el = n2.el = n1.el;
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      el.__vnode = n2;
-    }
+    if (false) // removed by dead control flow
+{}
     let { patchFlag, dynamicChildren, dirs } = n2;
     patchFlag |= n1.patchFlag & 16;
     const oldProps = n1.props || EMPTY_OBJ;
@@ -33320,9 +33253,8 @@ function baseCreateRenderer(options, createHydrationFns) {
           instance.a && queuePostRenderEffect(instance.a, parentSuspense);
         }
         instance.isMounted = true;
-        if ( false || __VUE_PROD_DEVTOOLS__) {
-          devtoolsComponentAdded(instance);
-        }
+        if (false) // removed by dead control flow
+{}
         initialVNode = container = anchor = null;
       } else {
         let { next, bu, u, parent, vnode } = instance;
@@ -33394,9 +33326,8 @@ function baseCreateRenderer(options, createHydrationFns) {
             parentSuspense
           );
         }
-        if ( false || __VUE_PROD_DEVTOOLS__) {
-          devtoolsComponentUpdated(instance);
-        }
+        if (false) // removed by dead control flow
+{}
         if (false) // removed by dead control flow
 {}
       }
@@ -33909,9 +33840,8 @@ function baseCreateRenderer(options, createHydrationFns) {
     queuePostRenderEffect(() => {
       instance.isUnmounted = true;
     }, parentSuspense);
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      devtoolsComponentRemoved(instance);
-    }
+    if (false) // removed by dead control flow
+{}
   };
   const unmountChildren = (children, parentComponent, parentSuspense, doRemove = false, optimized = false, start = 0) => {
     for (let i = start; i < children.length; i++) {
@@ -35247,9 +35177,8 @@ function handleSetupResult(instance, setupResult, isSSR) {
   } else if (isObject(setupResult)) {
     if (false) // removed by dead control flow
 {}
-    if ( false || __VUE_PROD_DEVTOOLS__) {
-      instance.devtoolsRawSetupState = setupResult;
-    }
+    if (false) // removed by dead control flow
+{}
     instance.setupState = proxyRefs(setupResult);
     if (false) // removed by dead control flow
 {}
@@ -35272,7 +35201,7 @@ function finishComponentSetup(instance, isSSR, skipOptions) {
   const Component = instance.type;
   if (!instance.render) {
     if (!isSSR && compile && !Component.render) {
-      const template = Component.template || __VUE_OPTIONS_API__ && resolveMergedOptions(instance).template;
+      const template = Component.template ||  true && resolveMergedOptions(instance).template;
       if (template) {
         if (false) // removed by dead control flow
 {}
@@ -35298,7 +35227,7 @@ function finishComponentSetup(instance, isSSR, skipOptions) {
       installWithProxy(instance);
     }
   }
-  if (__VUE_OPTIONS_API__ && true) {
+  if (true) {
     const reset = setCurrentInstance(instance);
     pauseTracking();
     try {
@@ -36641,9 +36570,8 @@ class VueElement extends BaseClass {
     }
   }
   _mount(def) {
-    if (( false || __VUE_PROD_DEVTOOLS__) && !def.name) {
-      def.name = "VueElement";
-    }
+    if (false) // removed by dead control flow
+{}
     this._app = this._createApp(def);
     this._inheritParentContext();
     if (def.configureApp) {
@@ -37545,22 +37473,66 @@ const initDirectivesForSSR = () => {
 
 
 
-;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.3_bff6aa4fbbd74c4b86a55a5bcaca0bdd/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.3_bff6aa4fbbd74c4b86a55a5bcaca0bdd/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/App.vue?vue&type=template&id=40a89db3
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.3_bff6aa4fbbd74c4b86a55a5bcaca0bdd/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[8].use[0]!./src/components/CountComp.vue?vue&type=script&setup=true&lang=ts
 
-function Appvue_type_template_id_40a89db3_render(_ctx, _cache) {
-  return openBlock(), createElementBlock("h1", null, "Hello Vue!");
-}
+
+var _hoisted_1 = {
+  class: "home"
+};
+
+/* harmony default export */ var CountCompvue_type_script_setup_true_lang_ts = (/*@__PURE__*/defineComponent({
+  __name: 'CountComp',
+  setup: function setup(__props) {
+    var count = ref(0);
+    return function (_ctx, _cache) {
+      return openBlock(), createElementBlock("div", _hoisted_1, [_cache[1] || (_cache[1] = createBaseVNode("h2", null, "home", -1)), createBaseVNode("p", null, "count: " + toDisplayString(count.value), 1), createBaseVNode("button", {
+        class: "btn",
+        onClick: _cache[0] || (_cache[0] = function ($event) {
+          return count.value++;
+        })
+      }, "点击")]);
+    };
+  }
+}));
+;// ./src/components/CountComp.vue?vue&type=script&setup=true&lang=ts
+ 
 // EXTERNAL MODULE: ./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.3_bff6aa4fbbd74c4b86a55a5bcaca0bdd/node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(64788);
-;// ./src/App.vue
+;// ./src/components/CountComp.vue
 
-const script = {}
+
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(script, [['render',Appvue_type_template_id_40a89db3_render]])
 
-/* harmony default export */ var App = (__exports__);
+
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(CountCompvue_type_script_setup_true_lang_ts, [['__scopeId',"data-v-115b88c4"]])
+
+/* harmony default export */ var CountComp = (__exports__);
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.3_bff6aa4fbbd74c4b86a55a5bcaca0bdd/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[8].use[0]!./src/App.vue?vue&type=script&setup=true&lang=ts
+
+
+
+/* harmony default export */ var Appvue_type_script_setup_true_lang_ts = (/*@__PURE__*/defineComponent({
+  __name: 'App',
+  setup: function setup(__props) {
+    console.log("production");
+    console.log("/");
+    return function (_ctx, _cache) {
+      return openBlock(), createElementBlock(Fragment, null, [_cache[0] || (_cache[0] = createBaseVNode("h1", null, "Hello Vue!", -1)), createVNode(CountComp)], 64);
+    };
+  }
+}));
+;// ./src/App.vue?vue&type=script&setup=true&lang=ts
+ 
+;// ./src/App.vue
+
+
+
+const App_exports_ = Appvue_type_script_setup_true_lang_ts;
+
+/* harmony default export */ var App = (App_exports_);
 ;// ./src/main.ts
+
 
 
 

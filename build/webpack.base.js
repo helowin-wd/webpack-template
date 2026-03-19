@@ -3,6 +3,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const fs = require('fs')
 const webpack = require('webpack')
 
@@ -16,6 +17,27 @@ dotenvFiles.forEach(file => {
 })
 
 // console.log(process.env)
+
+const isProduction = process.env.NODE_ENV === 'production'
+
+const getStyleLoaders = preProcessor => {
+  return [
+    isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+    {
+      loader: 'css-loader',
+      options: {
+        // 🔥保证 css modules 在 .module.* 文件生效，并兼容 CommonJS/TS 导入
+        esModule: false,
+        modules: {
+          // 自动对以 .module.[css|scss|less] 结尾的文件启用 CSS Modules
+          auto: /\.module\.\w+$/i,
+          localIdentName: 'name__[local]___[hash:base64:5]'
+        }
+      }
+    },
+    preProcessor
+  ].filter(Boolean)
+}
 
 /**
  * @type {import('webpack').Configuration}
@@ -43,6 +65,9 @@ const config = {
       __VUE_OPTIONS_API__: JSON.stringify(true), // 需要选项 API 则设为 true
       __VUE_PROD_DEVTOOLS__: JSON.stringify(false), // 生产环境关闭 devtools
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false)
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:6].css'
     })
   ],
   module: {
@@ -69,6 +94,38 @@ const config = {
               transpileOnly: true,
               appendTsSuffixTo: ['\\.vue$/']
             }
+          }
+        ]
+      },
+      {
+        oneOf: [
+          {
+            test: /\.css$/,
+            exclude: /node_modules/,
+            use: getStyleLoaders()
+          },
+          // {
+          //   test: /\.module\.css$/i,
+          //   exclude: /node_modules/,
+          //   use: [
+          //     isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+          //     {
+          //       loader: 'css-loader',
+          //       options: {
+          //         modules: {
+          //           localIdentName: '[name]__[local]___[hash:base64:5]'
+          //         }
+          //       }
+          //     }
+          //   ]
+          // },
+          {
+            test: /\.s[ac]ss$/i,
+            use: getStyleLoaders('sass-loader')
+          },
+          {
+            test: /\.less$/i,
+            use: getStyleLoaders('less-loader')
           }
         ]
       }
