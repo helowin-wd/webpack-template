@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config build/webpack.dev.js",
-    "build": "webpack --config build/webpack.prod.js",
+    "serve": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --mode development",
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --mode production",
+    "build:test": "cross-env NODE_ENV=test webpack --config build/webpack.prod.js --mode test",
     "preview": "serve ./dist -l 4000 -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,10 @@
     "@babel/plugin-transform-runtime": "^7.29.0",
     "@babel/preset-env": "^7.29.2",
     "@babel/preset-typescript": "^7.28.5",
+    "@types/node": "^25.5.0",
     "babel-loader": "^10.1.1",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1",
     "html-webpack-plugin": "^5.6.6",
     "serve": "^14.2.6",
     "ts-loader": "^9.5.4",

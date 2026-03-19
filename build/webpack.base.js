@@ -3,27 +3,47 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const fs = require('fs')
+const webpack = require('webpack')
+
+const dotenvFiles = ['.env', '.env.local', `.env.${process.env.NODE_ENV}`, `.env.${process.env.NODE_ENV}.local`].filter(Boolean)
+
+// 将自定义的环境变量加载到webpack的环境变量：process.env
+dotenvFiles.forEach(file => {
+  if (fs.existsSync(file)) {
+    require('dotenv').config({ path: file })
+  }
+})
+
+// console.log(process.env)
 
 /**
  * @type {import('webpack').Configuration}
  */
 const config = {
-  optimization:{
-    minimize: false, // 关闭代码压缩
+  optimization: {
+    minimize: false // 关闭代码压缩
   },
   entry: path.resolve(__dirname, '../src/main.ts'),
   output: {
     filename: 'js/[name].[contenthash:6].js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: "/", // 打包后的资源的访问路径前缀
+    publicPath: '/', // 打包后的资源的访问路径前缀
     clean: true // 清除上一次打包的文件
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
-      title: 'Webpack Vue Template'
+      title: process.env.VUE_APP_TITLE
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.VUE_APP_API_URL': JSON.stringify(process.env.VUE_APP_API_URL),
+      'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
+      __VUE_OPTIONS_API__: JSON.stringify(true), // 需要选项 API 则设为 true
+      __VUE_PROD_DEVTOOLS__: JSON.stringify(false), // 生产环境关闭 devtools
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false)
+    })
   ],
   module: {
     rules: [
@@ -42,7 +62,7 @@ const config = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
-          "babel-loader",
+          'babel-loader',
           {
             loader: 'ts-loader',
             options: {
