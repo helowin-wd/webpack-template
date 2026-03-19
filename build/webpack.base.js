@@ -35,6 +35,9 @@ const getStyleLoaders = preProcessor => {
         }
       }
     },
+    {
+      loader: 'postcss-loader'
+    },
     preProcessor
   ].filter(Boolean)
 }

@@ -27552,13 +27552,9 @@ function traverse(value, depth = Infinity, seen) {
 /* unused harmony import specifier */ var runtime_core_esm_bundler_shallowRef;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isReactive;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_ref;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_isShallow;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_isReadonly;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_shallowReadArray;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_toReadonly;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_toReactive;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_customRef;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_track;
+/* unused harmony import specifier */ var runtime_core_esm_bundler_isShallow;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isString;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isFunction;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_extend;
@@ -27579,7 +27575,6 @@ function traverse(value, depth = Infinity, seen) {
 /* unused harmony import specifier */ var runtime_core_esm_bundler_camelize;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_capitalize;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isArray;
-/* unused harmony import specifier */ var runtime_core_esm_bundler_isObject;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_isSymbol;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_toHandlerKey;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_NOOP;
@@ -27587,6 +27582,7 @@ function traverse(value, depth = Infinity, seen) {
 /* unused harmony import specifier */ var runtime_core_esm_bundler_hyphenate;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_hasChanged;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_makeMap;
+/* unused harmony import specifier */ var runtime_core_esm_bundler_isObject;
 /* unused harmony import specifier */ var runtime_core_esm_bundler_toRawType;
 /**
 * @vue/runtime-core v3.5.30
@@ -30578,20 +30574,20 @@ function resolve(registry, name) {
 function renderList(source, renderItem, cache, index) {
   let ret;
   const cached = cache && cache[index];
-  const sourceIsArray = runtime_core_esm_bundler_isArray(source);
-  if (sourceIsArray || runtime_core_esm_bundler_isString(source)) {
-    const sourceIsReactiveArray = sourceIsArray && runtime_core_esm_bundler_isReactive(source);
+  const sourceIsArray = isArray(source);
+  if (sourceIsArray || isString(source)) {
+    const sourceIsReactiveArray = sourceIsArray && isReactive(source);
     let needsWrap = false;
     let isReadonlySource = false;
     if (sourceIsReactiveArray) {
-      needsWrap = !runtime_core_esm_bundler_isShallow(source);
-      isReadonlySource = runtime_core_esm_bundler_isReadonly(source);
-      source = runtime_core_esm_bundler_shallowReadArray(source);
+      needsWrap = !isShallow(source);
+      isReadonlySource = isReadonly(source);
+      source = shallowReadArray(source);
     }
     ret = new Array(source.length);
     for (let i = 0, l = source.length; i < l; i++) {
       ret[i] = renderItem(
-        needsWrap ? isReadonlySource ? runtime_core_esm_bundler_toReadonly(runtime_core_esm_bundler_toReactive(source[i])) : runtime_core_esm_bundler_toReactive(source[i]) : source[i],
+        needsWrap ? isReadonlySource ? toReadonly(toReactive(source[i])) : toReactive(source[i]) : source[i],
         i,
         void 0,
         cached && cached[i]
@@ -30605,7 +30601,7 @@ function renderList(source, renderItem, cache, index) {
         ret[i] = renderItem(i + 1, i, void 0, cached && cached[i]);
       }
     }
-  } else if (runtime_core_esm_bundler_isObject(source)) {
+  } else if (isObject(source)) {
     if (source[Symbol.iterator]) {
       ret = Array.from(
         source,
@@ -37508,17 +37504,32 @@ var exportHelper = __webpack_require__(64788);
 const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(CountCompvue_type_script_setup_true_lang_ts, [['__scopeId',"data-v-115b88c4"]])
 
 /* harmony default export */ var CountComp = (__exports__);
+;// ./src/styles/app.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ var app_module = ({"list":"name__list___f6fI9"});
 ;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.3_bff6aa4fbbd74c4b86a55a5bcaca0bdd/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[8].use[0]!./src/App.vue?vue&type=script&setup=true&lang=ts
+
+
+
 
 
 
 /* harmony default export */ var Appvue_type_script_setup_true_lang_ts = (/*@__PURE__*/defineComponent({
   __name: 'App',
   setup: function setup(__props) {
+    var arr = ['javascript', 'typescript', 'vue'].map(function (item) {
+      return item.toUpperCase();
+    });
     console.log("production");
     console.log("/");
     return function (_ctx, _cache) {
-      return openBlock(), createElementBlock(Fragment, null, [_cache[0] || (_cache[0] = createBaseVNode("h1", null, "Hello Vue!", -1)), createVNode(CountComp)], 64);
+      return openBlock(), createElementBlock(Fragment, null, [_cache[0] || (_cache[0] = createBaseVNode("h1", null, "Hello Vue!", -1)), createBaseVNode("ul", {
+        class: normalizeClass(unref(app_module).list)
+      }, [(openBlock(true), createElementBlock(Fragment, null, renderList(unref(arr), function (ele, index) {
+        return openBlock(), createElementBlock("li", {
+          key: index
+        }, toDisplayString(ele), 1);
+      }), 128))], 2), createVNode(CountComp)], 64);
     };
   }
 }));
