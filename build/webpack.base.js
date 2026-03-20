@@ -6,6 +6,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const fs = require('fs')
 const webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const dotenvFiles = ['.env', '.env.local', `.env.${process.env.NODE_ENV}`, `.env.${process.env.NODE_ENV}.local`].filter(Boolean)
 
@@ -71,6 +72,18 @@ const config = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:6].css'
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../public'),
+          to: path.resolve(__dirname, '../dist'),
+          toType: 'dir',
+          globOptions: {
+            ignore: ['**/.DS_Store', '**/index.html']
+          }
+        }
+      ]
     })
   ],
   module: {
