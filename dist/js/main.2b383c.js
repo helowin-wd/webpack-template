@@ -25097,6 +25097,11 @@ __webpack_require__(20206);
 /******/ 		})();
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	!function() {
+/******/ 		__webpack_require__.p = "/";
+/******/ 	}();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
@@ -37469,7 +37474,7 @@ const initDirectivesForSSR = () => {
 
 
 
-;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[8].use[0]!./src/components/CountComp.vue?vue&type=script&setup=true&lang=ts
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[9].use[0]!./src/components/CountComp.vue?vue&type=script&setup=true&lang=ts
 
 
 var _hoisted_1 = {
@@ -37507,7 +37512,85 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(CountCompvue_ty
 ;// ./src/assets/styles/app.module.css
 // extracted by mini-css-extract-plugin
 /* harmony default export */ var app_module = ({"list":"name__list___jrQVk"});
-;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[8].use[0]!./src/App.vue?vue&type=script&setup=true&lang=ts
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.symbol.js
+var es_symbol = __webpack_require__(65302);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.symbol.description.js
+var es_symbol_description = __webpack_require__(14758);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.symbol.iterator.js
+var es_symbol_iterator = __webpack_require__(99488);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.array.from.js
+var es_array_from = __webpack_require__(14211);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.array.iterator.js
+var es_array_iterator = __webpack_require__(66993);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.array.slice.js
+var es_array_slice = __webpack_require__(35737);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.function.name.js
+var es_function_name = __webpack_require__(19453);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.regexp.exec.js
+var es_regexp_exec = __webpack_require__(33768);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.regexp.to-string.js
+var es_regexp_to_string = __webpack_require__(25800);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/es.string.iterator.js
+var es_string_iterator = __webpack_require__(2851);
+// EXTERNAL MODULE: ./node_modules/.pnpm/core-js@3.49.0/node_modules/core-js/modules/web.dom-collections.iterator.js
+var web_dom_collections_iterator = __webpack_require__(4514);
+;// ./src/assets/images/1.png
+var _1_namespaceObject = __webpack_require__.p + "images/1.53b741..png";
+;// ./src/assets/images/2.png
+var _2_namespaceObject = __webpack_require__.p + "images/2.ea2339..png";
+;// ./src/assets/images/3.png
+var _3_namespaceObject = __webpack_require__.p + "images/3.f6e6a7..png";
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[9].use[0]!./src/views/imageView.vue?vue&type=template&id=4924701e&scoped=true
+
+
+
+
+
+
+
+
+
+
+
+
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
+
+
+
+function imageViewvue_type_template_id_4924701e_scoped_true_render(_ctx, _cache) {
+  return openBlock(), createElementBlock("div", null, _toConsumableArray(_cache[0] || (_cache[0] = [createBaseVNode("div", {
+    class: "image-view"
+  }, [createBaseVNode("img", {
+    src: _1_namespaceObject,
+    alt: "image1"
+  }), createBaseVNode("img", {
+    src: _2_namespaceObject,
+    alt: "image2"
+  }), createBaseVNode("img", {
+    src: _3_namespaceObject,
+    alt: "image3"
+  })], -1)])));
+}
+;// ./src/views/imageView.vue?vue&type=template&id=4924701e&scoped=true
+
+;// ./src/views/imageView.vue
+
+const script = {}
+
+;
+
+
+const imageView_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(script, [['render',imageViewvue_type_template_id_4924701e_scoped_true_render],['__scopeId',"data-v-4924701e"]])
+
+/* harmony default export */ var imageView = (imageView_exports_);
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[9].use[0]!./src/App.vue?vue&type=script&setup=true&lang=ts
+
 
 
 
@@ -37529,7 +37612,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(CountCompvue_ty
         return openBlock(), createElementBlock("li", {
           key: index
         }, toDisplayString(ele), 1);
-      }), 128))], 2), createVNode(CountComp)], 64);
+      }), 128))], 2), createVNode(CountComp), createVNode(imageView)], 64);
     };
   }
 }));
@@ -37542,7 +37625,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(CountCompvue_ty
 ;
 
 
-const App_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_script_setup_true_lang_ts, [['__scopeId',"data-v-37fd0bae"]])
+const App_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_script_setup_true_lang_ts, [['__scopeId',"data-v-24e0b3b4"]])
 
 /* harmony default export */ var App = (App_exports_);
 ;// ./src/main.ts

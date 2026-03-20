@@ -4,11 +4,13 @@
     <li v-for="(ele, index) in arr" :key="index">{{ ele }}</li>
   </ul>
   <CountComp />
+  <ImageView />
 </template>
 
 <script setup lang="ts">
 import CountComp from '@/components/CountComp.vue';
 import appStyle from "@/assets/styles/app.module.css";
+import ImageView from '@/views/imageView.vue';
 
 const arr = ['javascript', 'typescript', 'vue'].map(item => item.toUpperCase());
 

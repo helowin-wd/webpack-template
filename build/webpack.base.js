@@ -141,6 +141,14 @@ const config = {
             use: getStyleLoaders('less-loader')
           }
         ]
+      },
+      // 处理图片
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource', // 将图片资源转换为文件，并将其添加到生成的 JavaScript 文件中
+        generator: {
+          filename: 'images/[name].[contenthash:6].[ext]'
+        }
       }
     ]
   },
