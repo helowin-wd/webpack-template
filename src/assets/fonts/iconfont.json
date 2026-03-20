@@ -1,0 +1,44 @@
+{
+  "id": "3961655",
+  "name": "webpack",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "47061557",
+      "name": "日历坐标系",
+      "font_class": "rilizuobiaoxi",
+      "unicode": "ea86",
+      "unicode_decimal": 60038
+    },
+    {
+      "icon_id": "47061562",
+      "name": "水球图",
+      "font_class": "shuiqiutu",
+      "unicode": "ea87",
+      "unicode_decimal": 60039
+    },
+    {
+      "icon_id": "47061567",
+      "name": "仪表盘",
+      "font_class": "yibiaopan",
+      "unicode": "ea88",
+      "unicode_decimal": 60040
+    },
+    {
+      "icon_id": "47061569",
+      "name": "周期轴",
+      "font_class": "zhouqizhou",
+      "unicode": "ea89",
+      "unicode_decimal": 60041
+    },
+    {
+      "icon_id": "32276771",
+      "name": "拨浪鼓",
+      "font_class": "bolanggu",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    }
+  ]
+}

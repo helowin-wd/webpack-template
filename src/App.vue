@@ -5,6 +5,10 @@
   </ul>
   <CountComp />
   <ImageView />
+  <br />
+  <ul>
+    <li class="iconfont">&#xea86;</li>
+  </ul>
 </template>
 
 <script setup lang="ts">

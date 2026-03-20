@@ -37474,7 +37474,7 @@ const initDirectivesForSSR = () => {
 
 
 
-;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[9].use[0]!./src/components/CountComp.vue?vue&type=script&setup=true&lang=ts
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[10].use[0]!./src/components/CountComp.vue?vue&type=script&setup=true&lang=ts
 
 
 var _hoisted_1 = {
@@ -37540,7 +37540,7 @@ var _1_namespaceObject = __webpack_require__.p + "images/1.53b741..png";
 var _2_namespaceObject = __webpack_require__.p + "images/2.ea2339..png";
 ;// ./src/assets/images/3.png
 var _3_namespaceObject = __webpack_require__.p + "images/3.f6e6a7..png";
-;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[9].use[0]!./src/views/imageView.vue?vue&type=template&id=4924701e&scoped=true
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[10].use[0]!./src/views/imageView.vue?vue&type=template&id=4924701e&scoped=true
 
 
 
@@ -37589,7 +37589,7 @@ const script = {}
 const imageView_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(script, [['render',imageViewvue_type_template_id_4924701e_scoped_true_render],['__scopeId',"data-v-4924701e"]])
 
 /* harmony default export */ var imageView = (imageView_exports_);
-;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[9].use[0]!./src/App.vue?vue&type=script&setup=true&lang=ts
+;// ./node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.0_webpack@5.105.4/node_modules/babel-loader/lib/index.js!./node_modules/.pnpm/ts-loader@9.5.4_typescript@5.9.3_webpack@5.105.4/node_modules/ts-loader/index.js??clonedRuleSet-2.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.30_typescript@5.9.3__webpack@5.105.4/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[10].use[0]!./src/App.vue?vue&type=script&setup=true&lang=ts
 
 
 
@@ -37612,7 +37612,9 @@ const imageView_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(script, 
         return openBlock(), createElementBlock("li", {
           key: index
         }, toDisplayString(ele), 1);
-      }), 128))], 2), createVNode(CountComp), createVNode(imageView)], 64);
+      }), 128))], 2), createVNode(CountComp), createVNode(imageView), _cache[1] || (_cache[1] = createBaseVNode("br", null, null, -1)), _cache[2] || (_cache[2] = createBaseVNode("ul", null, [createBaseVNode("li", {
+        class: "iconfont"
+      }, "")], -1))], 64);
     };
   }
 }));
@@ -37625,7 +37627,7 @@ const imageView_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(script, 
 ;
 
 
-const App_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_script_setup_true_lang_ts, [['__scopeId',"data-v-24e0b3b4"]])
+const App_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_script_setup_true_lang_ts, [['__scopeId',"data-v-a8ce1cbc"]])
 
 /* harmony default export */ var App = (App_exports_);
 ;// ./src/main.ts

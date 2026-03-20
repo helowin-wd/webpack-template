@@ -149,6 +149,15 @@ const config = {
         generator: {
           filename: 'images/[name].[contenthash:6].[ext]'
         }
+      },
+      // 处理字体：用 asset/resource 始终输出文件；若用 asset + maxSize，小字体会被内联进 CSS，dist 里不会出现 fonts/
+      // 若你更希望小字体继续内联、减小 HTTP 请求，可以改回 asset，并接受没有 fonts 目录；需要独立文件就用当前的 asset/resource
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[contenthash:6].[ext]'
+        }
       }
     ]
   },
