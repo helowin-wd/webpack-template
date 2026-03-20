@@ -124,7 +124,17 @@ const config = {
           // },
           {
             test: /\.s[ac]ss$/i,
-            use: getStyleLoaders('sass-loader')
+            use: [
+              ...getStyleLoaders('sass-loader'),
+              {
+                loader: 'style-resources-loader',
+                options: {
+                  patterns: [
+                    path.resolve(__dirname, '../src/assets/styles/variables.scss')
+                  ]
+                }
+              }
+            ]
           },
           {
             test: /\.less$/i,

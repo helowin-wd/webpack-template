@@ -13,17 +13,17 @@ const count = ref(0)
 
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .btn {
-  background-color: #4f9cff;
-  color: #5c5c5c;
+  background-color: $primaryColor;
+  color: $secondaryColor;
   border: none;
-  border-radius: 4px;
+  border-radius: $borderRadius;
   padding: 8px 12px;
   cursor: pointer;
 
   &:hover {
-    background-color: darken(#ffffff, 5%);
+    background-color: $backgroundColor;
   }
 }
 </style>

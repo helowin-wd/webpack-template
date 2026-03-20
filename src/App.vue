@@ -8,10 +8,16 @@
 
 <script setup lang="ts">
 import CountComp from '@/components/CountComp.vue';
-import appStyle from "@/styles/app.module.css";
+import appStyle from "@/assets/styles/app.module.css";
 
 const arr = ['javascript', 'typescript', 'vue'].map(item => item.toUpperCase());
 
 console.log(process.env.NODE_ENV)
 console.log(process.env.BASE_URL)
 </script>
+
+<style lang="scss" scoped>
+.list {
+  color: #fff;
+}
+</style>
